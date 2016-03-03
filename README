@@ -1,0 +1,4 @@
+./scripts/compile.sh
+./scripts/cat.sh
+./scripts/run.sh
+./scripts/clean.sh
