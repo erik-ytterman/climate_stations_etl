@@ -1,4 +1,4 @@
-CREATE EXTERNAL TABLE climate_stations (
+CREATE EXTERNAL TABLE climate_station (
        id        STRING, 
        latitude  FLOAT, 
        longitude FLOAT,
