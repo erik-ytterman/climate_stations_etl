@@ -1,3 +1,5 @@
+Scripts to compile, list data, run MR job and clean the environment
+
 ./scripts/compile.sh
 ./scripts/cat.sh
 ./scripts/run.sh
