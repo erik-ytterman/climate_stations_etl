@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS climate_station;
 CREATE EXTERNAL TABLE climate_station (
        id        STRING, 
        latitude  FLOAT, 
