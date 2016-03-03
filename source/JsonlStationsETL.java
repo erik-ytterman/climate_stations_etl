@@ -50,7 +50,7 @@ public class JsonlStationsETL extends Configured implements Tool {
     public int run(String[] args) throws Exception {
 	// Get paths
 	Path inputPath = new Path(args[0]);
-	Path outputPath = new Path(args[1] + "/" + System.currentTimeMillis());				  
+	Path outputPath = new Path(args[1]);				  
 	Path schemaPath = new Path(args[2]);
 
 	// Create configuration
