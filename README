@@ -1,6 +1,7 @@
 Scripts to compile, list data, run MR job and clean the environment
 
-./scripts/compile.sh
-./scripts/cat.sh
-./scripts/run.sh
-./scripts/clean.sh
+Typical run cycle:
+./scripts/clean.sh 
+./scripts/compile.sh 
+./scripts/run_mapreduce.sh 
+./scripts/create_station_table.sh
