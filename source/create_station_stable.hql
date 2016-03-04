@@ -5,8 +5,5 @@ CREATE EXTERNAL TABLE climate_station (
        longitude FLOAT,
        elevation FLOAT,
        name      STRING )
-       ROW FORMAT SERDE 'parquet.hive.serde.ParquetHiveSerDe'
-       STORED AS
-       INPUTFORMAT 'parquet.hive.DeprecatedParquetInputFormat'
-       OUTPUTFORMAT 'parquet.hive.DeprecatedParquetOutputFormat'
+       STORED AS PARQUET
        LOCATION '/user/cloudera/outdata/climate-2015-12-15/ghcnd-stations';
