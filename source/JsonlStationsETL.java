@@ -75,6 +75,7 @@ public class JsonlStationsETL extends Configured implements Tool {
 	job.setPartitionerClass(HashPartitioner.class);
 
 	Schema stationSchema = new Schema.Parser().parse(schemaString);
+
         AvroParquetOutputFormat.setOutputPath(job, outputPath);
         AvroParquetOutputFormat.setSchema(job, stationSchema);
         AvroParquetOutputFormat.setCompression(job, CompressionCodecName.SNAPPY);

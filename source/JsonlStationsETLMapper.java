@@ -25,7 +25,6 @@ public class JsonlStationsETLMapper extends Mapper<LongWritable, Text, Void, Gen
     public void setup(Context context) {
 	Configuration conf = context.getConfiguration();
 	this.stationSchema = new Schema.Parser().parse(conf.get("climate.stations.schema"));
-	System.out.println("START");
     }
 
     @Override
