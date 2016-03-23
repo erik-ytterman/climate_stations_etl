@@ -1,14 +1,14 @@
-#!/home/cloudera/Python-3.3.3/bin/python3
+#!/home/cloudera/Python-3.4.4/bin/python3
 
 import sys
 import collections
 import json
 
-infile = './ghcnd-stations.txt'
+stnfile = '/home/cloudera/Dump/climate-2015-12-15/ghcnd-stations.txt'
 outfile = './ghcnd-stations.jsonl'
 
 with open(outfile, 'w') as output:
-    for line in open(infile):
+    for line in open(stnfile):
         data = line.strip()
 
         datum = collections.OrderedDict()
