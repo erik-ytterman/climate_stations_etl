@@ -1,3 +1,5 @@
+package station;
+
 import java.lang.InterruptedException;
 
 import java.io.IOException;
