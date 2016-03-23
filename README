@@ -7,27 +7,36 @@ Scripts to generate JSONL from climate dataset:
 ./preprocess/ghcnd-daily-2-jsonl.py
 ./preprocess/ghcnd-stations-2-jsonl.py
 
-Example HDFS file storare layout:
+Scripts to compile, list data, run MR job and clean the environment Typical run cycle:
 
-[cloudera@quickstart schema]$ hadoop fs -ls -R
+./scripts/clean.sh
+./scripts/compile_stations_mr.sh
+./scripts/run_stations_mr_etl.sh
+./scripts/create_station_table.sh
+
+Example HDFS file system layout after run:
+
+[cloudera@quickstart climate_stations_etl.git]$ hadoop fs -ls -R
 drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:01 .Trash
 drwxr-xr-x   - cloudera cloudera          0 2016-03-01 08:51 jsondata
-drwxr-xr-x   - cloudera cloudera          0 2016-03-23 01:54 jsondata/climate-2015-12-15
--rw-r--r--   1 cloudera cloudera 5821312563 2016-03-23 01:54 jsondata/climate-2015-12-15/ghcnd-daily.jsonl
--rw-r--r--   1 cloudera cloudera   10972883 2016-03-02 07:15 jsondata/climate-2015-12-15/ghcnd-stations.jsonl
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:09 jsondata/climate-2015-12-15
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:09 jsondata/climate-2015-12-15/daily
+-rw-r--r--   1 cloudera cloudera 5821312563 2016-03-23 01:54 jsondata/climate-2015-12-15/daily/ghcnd-daily.jsonl
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:09 jsondata/climate-2015-12-15/stations
+-rw-r--r--   1 cloudera cloudera   10972883 2016-03-02 07:15 jsondata/climate-2015-12-15/stations/ghcnd-stations.jsonl
 drwxr-xr-x   - cloudera cloudera          0 2016-03-03 06:34 logdata
 drwxr-xr-x   - cloudera cloudera          0 2016-03-03 06:34 logdata/climate-2015-12-15
-drwxr-xr-x   - cloudera cloudera          0 2016-03-04 04:53 outdata
-drwxr-xr-x   - cloudera cloudera          0 2016-03-23 04:39 outdata/climate-2015-12-15
-drwxr-xr-x   - scott    cloudera          0 2016-03-23 04:39 outdata/climate-2015-12-15/ghcnd-stations
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:41 outdata
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:41 outdata/climate-2015-12-15
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:42 outdata/climate-2015-12-15/stations
+-rw-r--r--   1 cloudera cloudera          0 2016-03-23 05:41 outdata/climate-2015-12-15/stations/_SUCCESS
+-rw-r--r--   1 cloudera cloudera        450 2016-03-23 05:42 outdata/climate-2015-12-15/stations/_common_metadata
+-rw-r--r--   1 cloudera cloudera        923 2016-03-23 05:42 outdata/climate-2015-12-15/stations/_metadata
+-rw-r--r--   1 cloudera cloudera    2439943 2016-03-23 05:41 outdata/climate-2015-12-15/stations/part-m-00000.snappy.parquet
 drwxr-xr-x   - cloudera cloudera          0 2016-03-02 06:25 schemas
 drwxr-xr-x   - cloudera cloudera          0 2016-03-23 04:59 schemas/climate-2015-12-15
 -rw-r--r--   1 cloudera cloudera        346 2016-03-23 04:59 schemas/climate-2015-12-15/ghcnd-daily.avsc
 -rw-r--r--   1 cloudera cloudera        374 2016-03-23 04:59 schemas/climate-2015-12-15/ghcnd-stations.avsc
 
-Scripts to compile, list data, run MR job and clean the environment Typical run cycle:
 
-./scripts/clean.sh 
-./scripts/compile.sh 
-./scripts/run_mapreduce.sh 
-./scripts/create_station_table.sh
+
