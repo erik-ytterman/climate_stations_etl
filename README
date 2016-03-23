@@ -2,9 +2,31 @@ Climate datasets are available from:
 
 ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily
 
-Scripts to compile, list data, run MR job and clean the environment
+Scripts to generate JSONL from climate dataset:
 
-Typical run cycle:
+./preprocess/ghcnd-daily-2-jsonl.py
+./preprocess/ghcnd-stations-2-jsonl.py
+
+Example HDFS file storare layout:
+
+[cloudera@quickstart schema]$ hadoop fs -ls -R
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:01 .Trash
+drwxr-xr-x   - cloudera cloudera          0 2016-03-01 08:51 jsondata
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 01:54 jsondata/climate-2015-12-15
+-rw-r--r--   1 cloudera cloudera 5821312563 2016-03-23 01:54 jsondata/climate-2015-12-15/ghcnd-daily.jsonl
+-rw-r--r--   1 cloudera cloudera   10972883 2016-03-02 07:15 jsondata/climate-2015-12-15/ghcnd-stations.jsonl
+drwxr-xr-x   - cloudera cloudera          0 2016-03-03 06:34 logdata
+drwxr-xr-x   - cloudera cloudera          0 2016-03-03 06:34 logdata/climate-2015-12-15
+drwxr-xr-x   - cloudera cloudera          0 2016-03-04 04:53 outdata
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 04:39 outdata/climate-2015-12-15
+drwxr-xr-x   - scott    cloudera          0 2016-03-23 04:39 outdata/climate-2015-12-15/ghcnd-stations
+drwxr-xr-x   - cloudera cloudera          0 2016-03-02 06:25 schemas
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 04:59 schemas/climate-2015-12-15
+-rw-r--r--   1 cloudera cloudera        346 2016-03-23 04:59 schemas/climate-2015-12-15/ghcnd-daily.avsc
+-rw-r--r--   1 cloudera cloudera        374 2016-03-23 04:59 schemas/climate-2015-12-15/ghcnd-stations.avsc
+
+Scripts to compile, list data, run MR job and clean the environment Typical run cycle:
+
 ./scripts/clean.sh 
 ./scripts/compile.sh 
 ./scripts/run_mapreduce.sh 
