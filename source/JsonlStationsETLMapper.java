@@ -18,7 +18,7 @@ import org.apache.avro.io.DecoderFactory;
 
 import parquet.Log;
 
-public class JsonlStationsETLMapper extends Mapper<LongWritable, Text, Void, GenericRecord>{
+public class JsonlStationsETLMapper extends Mapper<LongWritable, Text, Void, GenericRecord> {
     private Schema stationSchema = null;
 
     @Override

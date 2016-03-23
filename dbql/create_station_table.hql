@@ -6,4 +6,4 @@ CREATE EXTERNAL TABLE climate_station (
        elevation FLOAT,
        name      STRING )
        STORED AS PARQUET
-       LOCATION '/user/cloudera/outdata/climate-2015-12-15/stations';
+       LOCATION '/user/cloudera/climate-2015-12-15/outdata/stations';
