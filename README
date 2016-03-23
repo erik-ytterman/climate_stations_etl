@@ -1,3 +1,7 @@
+Climate datasets are available from:
+
+ftp://ftp.ncdc.noaa.gov/pub/data/ghcn/daily
+
 Scripts to compile, list data, run MR job and clean the environment
 
 Typical run cycle:
