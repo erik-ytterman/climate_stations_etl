@@ -1,0 +1,1 @@
+SELECT climate_daily.id AS id, COUNT(climate_daily.id) AS samples, climate_station.name FROM climate_daily, climate_station WHERE climate_daily.id LIKE 'SW%' AND climate_daily.id = climate_station.id GROUP BY climate_daily.id, climate_station.name;
