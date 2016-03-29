@@ -77,19 +77,20 @@ def read_dlyfiles(inpath, stations, outfile):
                             year = int(data[11:15].strip())
                             month = int(data[15:17].strip())
                             
-                            for day in range(1,31):
+                            for day in range(1, 32):
                                 length = 8
                                 index = ((day - 1) * length) + 21
                                 
                                 field = data[ index : (index + length) ]
                                 
                                 vtext = field[0:5]
-                                value = (float(vtext.strip()) / 10.0)
-                                mflag = field[5]
-                                qflag = field[6]
-                                sflag = field[7]
                                 
                                 if not vtext == '-9999':
+                                    value = (float(vtext.strip()) / 10.0)
+                                    mflag = field[5]
+                                    qflag = field[6]
+                                    sflag = field[7]
+
                                     datum = collections.OrderedDict()
                                     
                                     datum['id'] = sid
