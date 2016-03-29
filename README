@@ -18,25 +18,94 @@ Example HDFS file system layout after run:
 
 [cloudera@quickstart climate_stations_etl.git]$ hadoop fs -ls -R
 drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:01 .Trash
-drwxr-xr-x   - cloudera cloudera          0 2016-03-01 08:51 jsondata
-drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:09 jsondata/climate-2015-12-15
-drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:09 jsondata/climate-2015-12-15/daily
--rw-r--r--   1 cloudera cloudera 5821312563 2016-03-23 01:54 jsondata/climate-2015-12-15/daily/ghcnd-daily.jsonl
-drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:09 jsondata/climate-2015-12-15/stations
--rw-r--r--   1 cloudera cloudera   10972883 2016-03-02 07:15 jsondata/climate-2015-12-15/stations/ghcnd-stations.jsonl
-drwxr-xr-x   - cloudera cloudera          0 2016-03-03 06:34 logdata
-drwxr-xr-x   - cloudera cloudera          0 2016-03-03 06:34 logdata/climate-2015-12-15
-drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:41 outdata
-drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:41 outdata/climate-2015-12-15
-drwxr-xr-x   - cloudera cloudera          0 2016-03-23 05:42 outdata/climate-2015-12-15/stations
--rw-r--r--   1 cloudera cloudera          0 2016-03-23 05:41 outdata/climate-2015-12-15/stations/_SUCCESS
--rw-r--r--   1 cloudera cloudera        450 2016-03-23 05:42 outdata/climate-2015-12-15/stations/_common_metadata
--rw-r--r--   1 cloudera cloudera        923 2016-03-23 05:42 outdata/climate-2015-12-15/stations/_metadata
--rw-r--r--   1 cloudera cloudera    2439943 2016-03-23 05:41 outdata/climate-2015-12-15/stations/part-m-00000.snappy.parquet
-drwxr-xr-x   - cloudera cloudera          0 2016-03-02 06:25 schemas
-drwxr-xr-x   - cloudera cloudera          0 2016-03-23 04:59 schemas/climate-2015-12-15
--rw-r--r--   1 cloudera cloudera        346 2016-03-23 04:59 schemas/climate-2015-12-15/ghcnd-daily.avsc
--rw-r--r--   1 cloudera cloudera        374 2016-03-23 04:59 schemas/climate-2015-12-15/ghcnd-stations.avsc
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 06:01 climate-2015-12-15
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 06:02 climate-2015-12-15/jsondata
+drwxr-xr-x   - cloudera cloudera          0 2016-03-29 05:44 climate-2015-12-15/jsondata/daily
+-rw-r--r--   1 cloudera cloudera 5935020608 2016-03-29 05:44 climate-2015-12-15/jsondata/daily/ghcnd-daily.jsonl
+drwxr-xr-x   - cloudera cloudera          0 2016-03-29 05:44 climate-2015-12-15/jsondata/stations
+-rw-r--r--   1 cloudera cloudera   10972883 2016-03-29 05:44 climate-2015-12-15/jsondata/stations/ghcnd-stations.jsonl
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 06:03 climate-2015-12-15/logdata
+drwxr-xr-x   - cloudera cloudera          0 2016-03-29 05:47 climate-2015-12-15/outdata
+drwxr-xr-x   - cloudera cloudera          0 2016-03-29 05:57 climate-2015-12-15/outdata/daily
+-rw-r--r--   1 cloudera cloudera          0 2016-03-29 05:57 climate-2015-12-15/outdata/daily/_SUCCESS
+-rw-r--r--   1 cloudera cloudera        411 2016-03-29 05:57 climate-2015-12-15/outdata/daily/_common_metadata
+-rw-r--r--   1 cloudera cloudera      20246 2016-03-29 05:57 climate-2015-12-15/outdata/daily/_metadata
+-rw-r--r--   1 cloudera cloudera    2683603 2016-03-29 05:48 climate-2015-12-15/outdata/daily/part-m-00000.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2759214 2016-03-29 05:48 climate-2015-12-15/outdata/daily/part-m-00001.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2773152 2016-03-29 05:49 climate-2015-12-15/outdata/daily/part-m-00002.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2705833 2016-03-29 05:49 climate-2015-12-15/outdata/daily/part-m-00003.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2683264 2016-03-29 05:49 climate-2015-12-15/outdata/daily/part-m-00004.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2752003 2016-03-29 05:49 climate-2015-12-15/outdata/daily/part-m-00005.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2710133 2016-03-29 05:50 climate-2015-12-15/outdata/daily/part-m-00006.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2637030 2016-03-29 05:50 climate-2015-12-15/outdata/daily/part-m-00007.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2730059 2016-03-29 05:50 climate-2015-12-15/outdata/daily/part-m-00008.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2634890 2016-03-29 05:50 climate-2015-12-15/outdata/daily/part-m-00009.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2771263 2016-03-29 05:50 climate-2015-12-15/outdata/daily/part-m-00010.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2683450 2016-03-29 05:50 climate-2015-12-15/outdata/daily/part-m-00011.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2593125 2016-03-29 05:51 climate-2015-12-15/outdata/daily/part-m-00012.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2761681 2016-03-29 05:51 climate-2015-12-15/outdata/daily/part-m-00013.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2705377 2016-03-29 05:51 climate-2015-12-15/outdata/daily/part-m-00014.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2691444 2016-03-29 05:51 climate-2015-12-15/outdata/daily/part-m-00015.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2609356 2016-03-29 05:51 climate-2015-12-15/outdata/daily/part-m-00016.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2567479 2016-03-29 05:51 climate-2015-12-15/outdata/daily/part-m-00017.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2736917 2016-03-29 05:52 climate-2015-12-15/outdata/daily/part-m-00018.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2725202 2016-03-29 05:52 climate-2015-12-15/outdata/daily/part-m-00019.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2713067 2016-03-29 05:52 climate-2015-12-15/outdata/daily/part-m-00020.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2648930 2016-03-29 05:52 climate-2015-12-15/outdata/daily/part-m-00021.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2689427 2016-03-29 05:52 climate-2015-12-15/outdata/daily/part-m-00022.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2725299 2016-03-29 05:52 climate-2015-12-15/outdata/daily/part-m-00023.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2701657 2016-03-29 05:54 climate-2015-12-15/outdata/daily/part-m-00024.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2691150 2016-03-29 05:54 climate-2015-12-15/outdata/daily/part-m-00025.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2732137 2016-03-29 05:54 climate-2015-12-15/outdata/daily/part-m-00026.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2639733 2016-03-29 05:54 climate-2015-12-15/outdata/daily/part-m-00027.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2640194 2016-03-29 05:54 climate-2015-12-15/outdata/daily/part-m-00028.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2718108 2016-03-29 05:54 climate-2015-12-15/outdata/daily/part-m-00029.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2742679 2016-03-29 05:55 climate-2015-12-15/outdata/daily/part-m-00030.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2549657 2016-03-29 05:55 climate-2015-12-15/outdata/daily/part-m-00031.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2552402 2016-03-29 05:55 climate-2015-12-15/outdata/daily/part-m-00032.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2542421 2016-03-29 05:55 climate-2015-12-15/outdata/daily/part-m-00033.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2634078 2016-03-29 05:55 climate-2015-12-15/outdata/daily/part-m-00034.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2707475 2016-03-29 05:55 climate-2015-12-15/outdata/daily/part-m-00035.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2748739 2016-03-29 05:56 climate-2015-12-15/outdata/daily/part-m-00036.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2729162 2016-03-29 05:56 climate-2015-12-15/outdata/daily/part-m-00037.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2724867 2016-03-29 05:56 climate-2015-12-15/outdata/daily/part-m-00038.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2770218 2016-03-29 05:56 climate-2015-12-15/outdata/daily/part-m-00039.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2730492 2016-03-29 05:56 climate-2015-12-15/outdata/daily/part-m-00040.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2703806 2016-03-29 05:56 climate-2015-12-15/outdata/daily/part-m-00041.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2691927 2016-03-29 05:57 climate-2015-12-15/outdata/daily/part-m-00042.snappy.parquet
+-rw-r--r--   1 cloudera cloudera    2603327 2016-03-29 05:57 climate-2015-12-15/outdata/daily/part-m-00043.snappy.parquet
+-rw-r--r--   1 cloudera cloudera     579122 2016-03-29 05:57 climate-2015-12-15/outdata/daily/part-m-00044.snappy.parquet
+drwxr-xr-x   - cloudera cloudera          0 2016-03-29 05:46 climate-2015-12-15/outdata/stations
+-rw-r--r--   1 cloudera cloudera          0 2016-03-29 05:46 climate-2015-12-15/outdata/stations/_SUCCESS
+-rw-r--r--   1 cloudera cloudera        450 2016-03-29 05:46 climate-2015-12-15/outdata/stations/_common_metadata
+-rw-r--r--   1 cloudera cloudera        923 2016-03-29 05:46 climate-2015-12-15/outdata/stations/_metadata
+-rw-r--r--   1 cloudera cloudera    2439943 2016-03-29 05:46 climate-2015-12-15/outdata/stations/part-m-00000.snappy.parquet
+drwxr-xr-x   - cloudera cloudera          0 2016-03-23 06:02 climate-2015-12-15/schemas
+-rw-r--r--   1 cloudera cloudera        346 2016-03-23 04:59 climate-2015-12-15/schemas/ghcnd-daily.avsc
+-rw-r--r--   1 cloudera cloudera        374 2016-03-23 04:59 climate-2015-12-15/schemas/ghcnd-stations.avsc
 
+ output from HIVE query to count samples pers Swedish station.
+0: jdbc:hive2://localhost:10000/default> SELECT climate_daily.id AS id, COUNT(climate_daily.id) AS samples, climate_station.name FROM climate_daily, climate_station WHERE climate_daily.id LIKE 'SW%' AND climate_daily.id = climate_station.id GROUP BY climate_daily.id, climate_station.name;
 
-
++--------------+----------+-----------------------+--+
+|      id      | samples  | climate_station.name  |
++--------------+----------+-----------------------+--+
+| SW000002120  | 11117    | KVIKKJOKK-ARRENJARKA  |
+| SW000002196  | 11241    | HAPARANDA             |
+| SW000002288  | 10622    | HOLMOGADD A           |
+| SW000002410  | 11913    | MALUNG                |
+| SW000002512  | 14030    | SAVE-SKALVISERED      |
+| SW000002550  | 14028    | JONKOPINGS FLYGPLATS  |
+| SW000002590  | 14010    | VISBY                 |
+| SW000008525  | 13977    | LINKOEPING            |
+| SW000024180  | 14005    | KARLSTAD              |
+| SWE00100026  | 14043    | OESTERSUND            |
+| SWE00115961  | 14040    | SUNDSVALLS FLYGPLATS  |
+| SWE00140178  | 3742     | HOLMON A              |
+| SWE00140622  | 2597     | HAPARANDA_A           |
+| SWM00002080  | 6281     | KARESUANDO            |
+| SWM00002468  | 4945     | VAXJO_A               |
+| SWM00002485  | 116      | STOCKHOLM             |
+| SWM00002584  | 10771    | GOTSKA SANDON         |
+| SWM00002589  | 5219     | GOTSKA SANDON A       |
++--------------+----------+-----------------------+--+
